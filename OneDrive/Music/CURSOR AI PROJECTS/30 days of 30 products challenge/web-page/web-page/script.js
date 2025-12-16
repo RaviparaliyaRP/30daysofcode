@@ -15,8 +15,8 @@ const CONFIG = {
     
     // Social media links (update once)
     social: {
-        linkedin: "[TO BE ADDED]",
-        instagram: "[TO BE ADDED]"
+        linkedin: "https://www.linkedin.com/in/ravi-paraliya-507272367",
+        instagram: "https://www.instagram.com/raviparaliya.rp?igsh=MXFncTBrY2E0eHFxbQ=="
     }
 };
 
@@ -67,7 +67,7 @@ function updateSocialLinks() {
     socialLinks.forEach(link => {
         const ariaLabel = link.getAttribute('aria-label');
         
-        if (ariaLabel === 'LinkedIn' && CONFIG.social.linkedin !== '[TO BE ADDED]') {
+        if (ariaLabel === 'LinkedIn' && CONFIG.social.linkedin !== 'www.linkedin.com/in/raviparaliyarp') {
             link.href = CONFIG.social.linkedin;
         } else if (ariaLabel === 'Instagram' && CONFIG.social.instagram !== '[TO BE ADDED]') {
             link.href = CONFIG.social.instagram;
