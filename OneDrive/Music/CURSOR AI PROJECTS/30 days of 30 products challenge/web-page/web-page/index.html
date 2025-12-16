@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RaviCodes - #30DaysOfCode Challenge Portfolio">
+    <title>RaviCodes | #30DaysOfCode</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    NAVIGATION BAR (Fixed Header)
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <div class="nav-brand">
+                <span class="brand-text">RaviCodes</span>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="nav-social">
+                <a href="[TO BE ADDED]" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="[TO BE ADDED]" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    HERO SECTION
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Currently on Day <span id="current-day">02</span></span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="gradient-text">#30DaysOfCode</span>
+                <span class="title-sub">Challenge</span>
+            </h1>
+            
+            <p class="hero-tagline">Building the future, one commit at a time</p>
+            <p class="hero-subtitle">30 days of logic, creativity, and code. Tracked daily</p>
+        </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    PROJECT CARDS SECTION
+    ═══════════════════════════════════════════════════════════════
+    
+    TO ADD NEW PROJECTS:
+    1. Copy the project-card template below
+    2. Update the day number in the project-day badge
+    3. Update project-title with your project name
+    4. Update project-description with a short paragraph
+    5. Update the project-link href with your CodePen/GitHub link
+    -->
+    <section class="project-section" id="all-projects">
+        <div class="projects-grid" id="projects-container">
+            <!-- Day 01 -->
+            <div class="project-card">
+                <div class="project-day">Day 01</div>
+                <div class="project-content">
+                    <h2 class="project-title">Interactive Glassmorphic Profile Card</h2>
+                    <p class="project-description">
+                        Explored the power of CSS backdrop filters and 3D hover effects to create a stunning, frosted-glass UI component.
+                    </p>
+                    <a href="https://codepen.io/Paraliya-Ravi/pen/jEqoKEW" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        View Code →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Day 02 -->
+            <div class="project-card">
+                <div class="project-day">Day 02</div>
+                <div class="project-content">
+                    <h2 class="project-title">Custom Password Generator</h2>
+                    <p class="project-description">
+                        Built a pure JavaScript utility tool with custom logic for security. Handled arrays, randomization, and the Clipboard API without any external libraries.
+                    </p>
+                    <a href="https://codepen.io/Paraliya-Ravi/pen/LENKZeY" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        View Code →
+                    </a>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    FOOTER
+    ═══════════════════════════════════════════════════════════════
+    -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-copyright">© 2025 RaviCodes. Built with passion.</p>
+            <p class="footer-note">Crafted during #30DaysOfCode</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
