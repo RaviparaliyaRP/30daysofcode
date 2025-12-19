@@ -1,0 +1,7 @@
+{
+  "name": "Neural Aura - Advanced Generative Art System",
+  "description": "An immersive, interactive particle experience that combines sophisticated physics simulation with digital consciousness themes. Features text formation, audio reactivity, and fluid dynamics.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
