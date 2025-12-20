@@ -11,7 +11,7 @@ This file contains interactive functionality for the portfolio.
 // ============================================================
 const CONFIG = {
     // Current day of the challenge (update daily)
-    currentDay: 2,
+    currentDay: 6,
     
     // Social media links (update once)
     social: {
