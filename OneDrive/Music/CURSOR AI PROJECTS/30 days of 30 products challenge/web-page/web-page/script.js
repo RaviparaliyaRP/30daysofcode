@@ -10,8 +10,9 @@ This file contains interactive functionality for the portfolio.
 // CONFIGURATION - UPDATE THESE VALUES
 // ============================================================
 const CONFIG = {
-    // Current day of the challenge (update daily)
-    currentDay: 6,
+    // Challenge start date (Day 1) - Format: YYYY-MM-DD
+    // Today is Day 7, so Day 1 was 6 days ago (2025-12-15)
+    challengeStartDate: '2025-12-15', // Day 1 start date
     
     // Social media links (update once)
     social: {
@@ -19,6 +20,34 @@ const CONFIG = {
         instagram: "https://www.instagram.com/raviparaliya.rp?igsh=MXFncTBrY2E0eHFxbQ=="
     }
 };
+
+// ============================================================
+// CALCULATE CURRENT DAY (Automatic 24-hour cycle)
+// ============================================================
+function calculateCurrentDay() {
+    // Get challenge start date (Day 1) - set to midnight
+    const startDateStr = CONFIG.challengeStartDate + 'T00:00:00';
+    const startDate = new Date(startDateStr);
+    
+    // Get current date (local timezone) - set to midnight for accurate day calculation
+    const now = new Date();
+    const currentDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+    
+    // Reset start date to midnight for accurate calculation
+    const startDateMidnight = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate(), 0, 0, 0, 0);
+    
+    // Calculate difference in milliseconds
+    const timeDiff = currentDate.getTime() - startDateMidnight.getTime();
+    
+    // Convert to days
+    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    
+    // Day 1 is the start date, so add 1
+    const currentDay = daysDiff + 1;
+    
+    // Ensure day is between 1 and 30
+    return Math.max(1, Math.min(currentDay, 30));
+}
 
 // ============================================================
 // INITIALIZATION
@@ -34,11 +63,40 @@ document.addEventListener('DOMContentLoaded', function() {
 // PAGE INITIALIZATION
 // ============================================================
 function initializePage() {
-    // Update current day display
+    // Calculate and update current day automatically
+    const currentDay = calculateCurrentDay();
     const currentDayElement = document.getElementById('current-day');
     if (currentDayElement) {
-        currentDayElement.textContent = String(CONFIG.currentDay).padStart(2, '0');
+        currentDayElement.textContent = String(currentDay).padStart(2, '0');
     }
+    
+    // Set up automatic update at midnight (12:00 AM)
+    scheduleMidnightUpdate();
+}
+
+// ============================================================
+// SCHEDULE MIDNIGHT UPDATE (Automatic day change at 12:00 AM)
+// ============================================================
+function scheduleMidnightUpdate() {
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0); // Set to midnight
+    
+    // Calculate milliseconds until midnight
+    const msUntilMidnight = tomorrow.getTime() - now.getTime();
+    
+    // Update the day at midnight
+    setTimeout(function() {
+        const currentDay = calculateCurrentDay();
+        const currentDayElement = document.getElementById('current-day');
+        if (currentDayElement) {
+            currentDayElement.textContent = String(currentDay).padStart(2, '0');
+        }
+        
+        // Schedule next update (24 hours later)
+        scheduleMidnightUpdate();
+    }, msUntilMidnight);
 }
 
 // ============================================================
