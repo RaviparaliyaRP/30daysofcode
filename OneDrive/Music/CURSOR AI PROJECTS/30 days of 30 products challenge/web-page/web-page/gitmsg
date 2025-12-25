@@ -1,0 +1,11 @@
+# Navigate to your project directory first
+cd "C:\Users\PARALIYA RAVI\OneDrive\Music\CURSOR AI PROJECTS\30 days of 30 products challenge\web-page\web-page"
+
+# Add files
+git add script.js index.html
+
+# Commit with message
+git commit -m "Your commit message here"
+
+# Push to GitHub
+git push origin main
